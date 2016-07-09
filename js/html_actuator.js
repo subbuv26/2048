@@ -62,7 +62,13 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
+  //inner.textContent = tile.value;
+  img = document.createElement("img")
+  img_src = "images/photo" + tile.value + ".jpg";
+  img.setAttribute("src",img_src)
+  img.setAttribute("height", 106.5)
+  img.setAttribute("width", 106.5)
+  inner.appendChild(img)
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
